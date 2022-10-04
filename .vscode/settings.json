@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0f13fbc6-562d-4cec-a17e-0cb98e9c07d1/AppServices/subscriptions/0f13fbc6-562d-4cec-a17e-0cb98e9c07d1/resourceGroups/projectstar_group/providers/Microsoft.Web/sites/projectstar",
+    "appService.deploySubpath": "."
+}
