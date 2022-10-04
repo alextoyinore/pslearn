@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Project Star {% endblock %}
+{% block signuplink %}
+<a class="cta-btn cta-medium" href="{{ url_for('auth.login') }}">Log In</a>
+{% endblock %}
+{% block loginlink %}
+<a class="cta-btn cta-secondary cta-medium" href="{{ url_for('auth.signup') }}">Sign Up</a>
+{% endblock %}
+{% block navsearch %}
+<input class="field search short" type="search" name="search" id="search" placeholder="Search">
+{% endblock %}
+{% block content %}
+<section class="content">
+    <div class="boxed">
+        <article class="article-space">
+            <p class="title-display">Learn what earns today</p>
+            <p class="title-sub v-space20 weight-light">A platform that helps you learn on-demand skills that you can immediately earn it.</p>
+        </article>
+    </div>
+</section>
+{% endblock %}
+{% block footer %}
+<footer>
+    <div id="footer-navs">
+        <span>&copy; Project Star Technologies</span>
+    </div>   
+</footer>
+{% endblock %}

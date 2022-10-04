@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block loginlink %}
+<a class="cta-btn cta-secondary cta-medium" href="{{ url_for('auth.signup') }}">Sign Up</a>
+{% endblock %}
+{% block navsearch %}
+<input class="field search" type="search" name="search" id="search" placeholder="Search">
+{% endblock %}
+{% block content %}
+<section class="content">
+   <div class="boxed">
+        <article class="article-box">
+            <p class="title-display">Welcome back.</p>
+            <p class="title-sub v-space20 weight-light">Don't loose momentum, get back on the learning train. &nbsp; The Joy of accomplishment and a better life awaits you at your destination.</p>
+        </article>
+        <form class="signup-form" method="POST">
+            <h2 class="form-title">Log in</h2> <br>
+            <input class="field" type="email" placeholder="Email" name="email" required> <br><br>
+            <input class="field" type="password" placeholder="Password" name="password" required> <br><br>
+            <input class="btn-action" type="submit" value="Continue"><br><br>
+            <a class="inline-link" href="{{ url_for('auth.forgot_password') }}">Forgot Password?</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
+{% block footer %}
+<footer>
+    <div id="footer-navs">
+        <span>&copy; Project Star Technologies</span>
+    </div>   
+</footer>
+{% endblock %}
