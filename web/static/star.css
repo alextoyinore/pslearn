@@ -13,7 +13,7 @@ body{
 li, a, button, span, input{
     font-family: "PT Sans";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1em;
     text-decoration: none;
     color: #aaa;
 }
@@ -29,6 +29,18 @@ h3, strong, p {
     font-weight: 700;
 }
 
+/* BEGIN Transient properties */
+
+.add-shadow{
+    box-shadow: 0px 5px 20px #0848b717;
+}
+
+.green-text{
+    color: #08b768;
+}
+
+/* END Transient properties */
+
 .weight-light{
     font-weight: 400;
 }
@@ -41,9 +53,9 @@ h3, strong, p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 1.2em 10%;
     background-color: #fff;
-    height: 100px;
+    height: 12vh;
     border-bottom: 1px solid #0847B7;
     position: fixed;
     width: 100%;
@@ -52,7 +64,7 @@ h3, strong, p {
 }
 
 .logo{
-    height: 30px;
+    height: 2em;
     cursor: pointer;
 }
 
@@ -62,7 +74,7 @@ h3, strong, p {
 
 .horizontal-nav-links li{
     display: inline-block;
-    padding: 0px 10px;
+    padding: 0px .5em;
 }
 
 .horizontal-nav-links li a{
@@ -77,7 +89,7 @@ h3, strong, p {
 
 a.f-cta-link{
     transition: all 0.3s ease-in 0s;
-    font-size: 14px;
+    font-size: .8em;
     color: #fff;
 }
 
@@ -92,7 +104,7 @@ a.inline-link{
     transition: all 0.3s ease-in 0s;
     color: #232323;
     font-weight: 700;
-    font-size: 14px;
+    font-size: .8em;
 }
 
 a.inline-link:hover{
@@ -127,10 +139,10 @@ a.cta-link:hover{
 a.cta-btn{
     transition: all 0.3s ease-in 0s;
     border: 1px solid #0847B7;
-    border-radius: 30px;
+    border-radius: 2em;
     color: #0847B7;
     font-weight: 700;
-    padding: 8px 50px;
+    padding: .5em 1em;
 }
 
 a.cta-btn:hover{
@@ -141,10 +153,10 @@ a.cta-btn:hover{
 .horizontal-nav-links li a.cta-btn{
     transition: all 0.3s ease-in 0s;
     border: 1px solid #0847B7;
-    border-radius: 30px;
+    border-radius: 2em;
     color: #0847B7;
     font-weight: 700;
-    padding: 10px 50px;
+    padding: .5em 3em;
 }
 
 .horizontal-nav-links li a.cta-btn:hover{
@@ -192,12 +204,12 @@ a.cta-secondary:hover{
 }
 
 a.cta-big{
-    font-size: 22px;
+    font-size: 1.4em;
     font-weight: 400;
 }
 
 a.cta-medium{
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: 400;
 }
 
@@ -217,19 +229,21 @@ a.cta-medium{
 /* BEGIN field */
 
 .field {
-    padding: 10px 40px;
+    padding: .6em 2.6em;
     outline: #aaa;
     border: 1px solid #aaa;
-    border-radius: 30px;
+    border-radius: 2em;
     font-family: "PT Sans";
     width: 100%;
     color: #232323;
+    background-color: #fff;
 }
 
 .field:focus{
     outline: #0847B7;
     border: 2px solid #0847B7;
     box-shadow: 5px 5px 20px #0848b717;
+    background-color: #fff;
 }
 
 .search{
@@ -250,25 +264,25 @@ footer{
 
 footer span{
     color: #fff;
-    font-size: 13px;
+    font-size: .75em;
 }
 
 
 footer #footer-navs{
     margin: auto;
     width: 80%;
-    padding: 8px 0;
+    padding: .5em 0;
 }
 
 footer #footer-navs ul {
     list-style: none;
-    margin: 0px 40px 0px 0px;
+    margin: 0px 2.5em 0px 0px;
 }
 
 footer #footer-navs ul li:first-child{
     font-weight: 700;
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: .2em;
 }
 
 /* END footer */
@@ -277,10 +291,10 @@ footer #footer-navs ul li:first-child{
 .btn-action{
     transition: all 0.3s ease-in 0s;
     border: 1px solid #0847B7;
-    border-radius: 30px;
+    border-radius: 2em;
     color: #0847B7;
     font-weight: 700;
-    padding: 12px 50px;
+    padding: .8em 3em;
     width: 100%;
 }
 
@@ -293,10 +307,10 @@ footer #footer-navs ul li:first-child{
 .btn-secondary{
     transition: all 0.3s ease-in 0s;
     border: 1px solid #08b768;
-    border-radius: 30px;
+    border-radius: 2em;
     color: #08b768;
     font-weight: 700;
-    padding: 12px 50px;
+    padding: .7em 3em;
     width: 100%;
 }
 
@@ -311,7 +325,7 @@ footer #footer-navs ul li:first-child{
 /* BEGIN content */
 .content{
     width: 100%;
-    margin: 25vh 0;
+    margin: 20vh 0;
 }
 
 .boxed{
@@ -322,42 +336,42 @@ footer #footer-navs ul li:first-child{
 }
 
 .article-box{
-    width: 60%;
+    width: 50%;
     background-color: #0847B7;
-    border-radius: 30px;
+    border-radius: 2em;
     color: #fff;
-    padding: 30px;
+    padding: 2em;
     /* box-shadow: 0px 5px 20px #0848b717; */
 }
 
 .article-space{
-    width: 60%;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 2em;
+    padding: 2em;
 }
 
 .content .login-form, .signup-form{
-    /*margin: 10vh auto;*/
-    width: 35%;
+    width: 40%;
     background-color: #fff;
-    border-radius: 30px;
+    border-radius: 2em;
     border: none;
-    padding: 30px;
+    padding: 2em;
     /* box-shadow: 0px 5px 20px #0848b717; */
 }
 
 .title-display{
-    font-size: 108px;
+    font-size: 5em;
     font-weight: 700;
-    line-height: 90px;
-    hyphens: auto;
+    line-height: .8em;
 }
 
 .title-sub{
     width: 95%;
-    hyphens: auto;
 }
 
-.v-space20{
-    margin: 20px 0;
+.v-space40{
+    margin: 2em 0;
 }
 /* END content */
 
@@ -366,14 +380,10 @@ footer #footer-navs ul li:first-child{
 .info {
     transition: all 0.3s ease-in 0s;
     position: relative;
-    top: 14vh;
+    top: 12vh;
     z-index: -1;
-    /* left: 10%;
-    width: 80%; 
-    border-radius: 10px;
-    */
     background-color: #fff;
-    padding: 10px 20px;
+    padding: .7em 1.2em;
     font-family: "PT Sans";
     text-align: center;
 }
@@ -392,6 +402,16 @@ footer #footer-navs ul li:first-child{
     /* box-shadow: 0px 5px 10px #08b7683c; */
 }
 
+.close{
+    right: 2em;
+    font-weight: bold;
+    position: absolute;
+    font-size: 1em;
+    z-index: 1;
+    color: #047542;
+    cursor: pointer;
+}
+
 /* END info */
 
 /* BEGIN logout */
@@ -399,8 +419,8 @@ footer #footer-navs ul li:first-child{
     color: #b70808;
     font-weight: 400;
     text-align: center;
-    padding: 10px 30px;
-    font-size: 14px;
+    padding: .8em 2em;
+    font-size: .9em;
 }
 /* END logout */
 
@@ -409,7 +429,7 @@ footer #footer-navs ul li:first-child{
     background-color: #fff;
     border: 1px solid #ccc;
     position: absolute;
-    border-radius: 20px;
+    border-radius: 1.2em;
     transition: all 0.3s ease-in 0s;
     z-index: 1;
 }

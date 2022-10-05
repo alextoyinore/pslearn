@@ -12,10 +12,10 @@
         {% block navsearch %}{% endblock %}
         <nav class="horizontal-nav-links">
             <ul>
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">For You</a></li>
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">For School</a></li>
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">For Organization</a></li>
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">For Government</a></li>
+                <li> <a class="cta-link" href="{{ url_for('view.index') }}">You</a></li> | 
+                <li> <a class="cta-link" href="{{ url_for('view.index') }}">School</a></li> | 
+                <li> <a class="cta-link" href="{{ url_for('view.index') }}">Organization</a></li> | 
+                <li> <a class="cta-link" href="{{ url_for('view.index') }}">Government</a></li>
             </ul>
         </nav>
     {% if user.is_authenticated %}
@@ -31,9 +31,10 @@
     {% if messages %}
         {% for category, message in messages %}
             {% if category == 'error' %}
-            <p class="info error">{{ message }}</p>
+            <div class="info error">{{ message }} <b class="close">&times;</b> </div>
+            
             {% else %}
-            <p class="info success">{{ message }}</p>
+            <div class="info success">{{ message }} <b class="close">&times;</b> </div>
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -57,10 +58,18 @@
             dropdown.classList.add('profile-dropdown')
             logoutLink.classList.add('logout-link')
             logoutLink.textContent = 'Logout'
-            logoutLink.setAttribute('href', '{{ url_for('auth.logout') }}')
+            logoutLink.setAttribute('href', "{{ url_for('auth.logout') }}")
             dropdown.appendChild(logoutLink)
             dropdown.style.top = this.bottom + 5 +'px'
             this.appendChild(dropdown)
+        })
+
+        const info = document.querySelector('.info')
+        const closeBtn = document.querySelector('.close')
+        closeBtn.style.position = this.top
+
+        closeBtn.addEventListener('click', function(){
+            info.style.display = 'none'
         })
 
     </script>
