@@ -52,10 +52,10 @@ p{
 
 .copyright{
     display: none;
-    position: relative;
-    bottom: 10vh;
+    margin: 25vh auto;
     color: #fff;
     font-size: 1em;
+
 }
 
 
@@ -81,9 +81,21 @@ p{
     }
 }
 
+@media screen and (width: 540px) {
+    .logo{
+        margin-top: 10vh;
+    }
+}
+
 @media screen and (min-height: 800px){
     .copyright{
-        display: block;
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .copyright {
+        margin: 20vh auto;
     }
 }
 /* .cta-btn:hover{
