@@ -15,14 +15,16 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
-    migrate = Migrate(app, db)
+    Migrate(app, db, render_as_batch=True)
 
     from .auth import auth
     from .views import view
     from .models import User, Course, CourseCategory
+    from .admin import admin
 
     app.register_blueprint(auth)
     app.register_blueprint(view)
+    app.register_blueprint(admin)
 
     create_database(app)
 
@@ -41,4 +43,3 @@ def create_database(app):
     if not path.exists('web/' + DB_NAME):
         db.create_all(app=app)
         print(f'Database {DB_NAME} successfully create.')
-

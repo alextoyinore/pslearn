@@ -1,77 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='star.css') }}">
-    <script defer type="text/javascript" src="{{ url_for('static', filename='star.js') }}"></script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='star.css') }}"
+    />
+    <script
+      defer
+      type="text/javascript"
+      src="{{ url_for('static', filename='star.js') }}"
+    ></script>
+  </head>
+  <body>
     <header class="horizontal-nav">
-        <img class="logo" src="{{ url_for('static', filename='logo-1.png') }}" alt="logo">
-        {% block navsearch %}{% endblock %}
-        <nav class="horizontal-nav-links">
-            <ul>
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">You</a></li> | 
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">School</a></li> | 
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">Organization</a></li> | 
-                <li> <a class="cta-link" href="{{ url_for('view.index') }}">Government</a></li>
-            </ul>
-        </nav>
-    {% if user.is_authenticated %}
-        <a class="cta-link user-profile-link" href="">{{ user.first_name }} {{ user.last_name }}</a>
-{#        <a class="logout-link" href="{{ url_for('auth.logout') }}">Logout</a>#}
-    {% else %}
-        {% block signuplink %} {% endblock %}
-        {% block loginlink %} {% endblock %}
-    {% endif %}
+      <img
+        class="logo"
+        src="{{ url_for('static', filename='logo-1.png') }}"
+        alt="logo"
+      />
+      {% block navsearch %}{% endblock %}
+      <nav class="horizontal-nav-links">
+        <ul>
+          <li>
+            <a class="cta-link" href="{{ url_for('view.index') }}">For You</a>
+          </li>
+          |
+          <li>
+            <a class="cta-link" href="{{ url_for('view.index') }}">Schools</a>
+          </li>
+          |
+          <li>
+            <a class="cta-link" href="{{ url_for('view.index') }}">Organizations</a>
+          </li>
+          |
+          <li>
+            <a class="cta-link" href="{{ url_for('view.index') }}">Governments</a>
+          </li>
+        |
+            {% if user.is_authenticated %}
+         <li><a class="cta-link user-profile-link" href=""
+            >{{ user.first_name }} {{ user.last_name }}</a
+          ></li>
+      {% else %}{% block loginlink %} {% endblock %} {% block signuplink %} {%
+      endblock %} {% endif %}
+        </ul>
+      </nav>
     </header>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            {% if category == 'error' %}
-            <div class="info error">{{ message }} <b class="close">&times;</b> </div>
-            
-            {% else %}
-            <div class="info success">{{ message }} <b class="close">&times;</b> </div>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="info error">{{ message }} <b class="close">&times;</b></div>
 
-    {% block content %} {% endblock %}
-
-    {% block footer %} {% endblock %}
+    {% else %}
+    <div class="info success">{{ message }} <b class="close">&times;</b></div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %} {% block content %} {%
+    endblock %} {% block footer %} {% endblock %}
 
     <script defer type="text/javascript">
-        const logo = document.querySelector('.logo')
-        logo.addEventListener('click', function(){
-            window.location.assign("{{ url_for('view.index') }}")
-        })
+      const logo = document.querySelector(".logo");
+      logo.addEventListener("click", function () {
+        window.location.assign("{{ url_for('view.index') }}");
+      });
 
-        const userProfileLink = document.querySelector('.user-profile-link')
-        const logoutLink = document.querySelector('.logout-link')
-        userProfileLink.addEventListener('mouseenter', function (){
-            const dropdown = document.createElement('div')
-            const logoutLink = document.createElement('a')
-            dropdown.classList.add('profile-dropdown')
-            logoutLink.classList.add('logout-link')
-            logoutLink.textContent = 'Logout'
-            logoutLink.setAttribute('href', "{{ url_for('auth.logout') }}")
-            dropdown.appendChild(logoutLink)
-            dropdown.style.top = this.bottom + 5 +'px'
-            this.appendChild(dropdown)
-        })
+      const userProfileLink = document.querySelector(".user-profile-link");
+      const logoutLink = document.querySelector(".logout-link");
+      userProfileLink.addEventListener("mouseenter", function () {
+        const dropdown = document.createElement("div");
+        const logoutLink = document.createElement("a");
+        dropdown.classList.add("profile-dropdown");
+        logoutLink.classList.add("logout-link");
+        logoutLink.textContent = "Logout";
+        logoutLink.setAttribute("href", "{{ url_for('auth.logout') }}");
+        dropdown.appendChild(logoutLink);
+        dropdown.style.top = this.bottom + 5 + "px";
+        this.appendChild(dropdown);
+      });
 
-        const info = document.querySelector('.info')
-        const closeBtn = document.querySelector('.close')
-        closeBtn.style.position = this.top
+      const info = document.querySelector(".info");
+      const closeBtn = document.querySelector(".close");
+      closeBtn.style.position = this.top;
 
-        closeBtn.addEventListener('click', function(){
-            info.style.display = 'none'
-        })
-
+      closeBtn.addEventListener("click", function () {
+        info.style.display = "none";
+      });
     </script>
-</body>
+  </body>
 </html>

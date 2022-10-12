@@ -1,28 +1,45 @@
-{% extends 'base.html' %}
-{% block title %} Project Star {% endblock %}
-{% block signuplink %}
-<a class="cta-btn cta-medium" href="{{ url_for('auth.login') }}">Log In</a>
-{% endblock %}
-{% block loginlink %}
-<a class="cta-btn cta-secondary cta-medium" href="{{ url_for('auth.signup') }}">Sign Up</a>
-{% endblock %}
-{% block navsearch %}
-<input class="field search short" type="search" name="search" id="search" placeholder="Search">
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} Project Star {% endblock %} {% block
+signuplink %}
+<li>
+  <a class="cta-link" href="{{ url_for('auth.signup') }}">Sign up</a>
+</li>
+
+<li>
+  <a class="cta-link" href="{{ url_for('auth.login') }}">Log in</a>
+</li>
+
+{% endblock %} {% block loginlink %}
+<li>
+  <a class="cta-link" href="{{ url_for('auth.signup') }}">Explore</a>
+</li>
+
+{% endblock %} {% block navsearch %}
+<input
+  class="field search"
+  type="search"
+  name="search"
+  id="search"
+  placeholder="Search"
+/>
+{% endblock %} {% block content %}
 <section class="content">
-    <div class="boxed">
-        <article class="article-space">
-            <p class="title-display">Learn what <i class="green-text">earns</i> today</p>
-            <p class="title-sub v-space40 weight-light">A platform that helps you learn on-demand skills that you can immediately earn it.</p>
-        </article>
-    </div>
+  <div class="boxed">
+    <article class="article-space">
+      <p class="title-display">
+        Flexible <em class="green-text">Learning</em> Flexible
+        <em class="green-text">Payment</em>
+      </p>
+      <p class="title-sub v-space40 weight-light">
+        Welcome to where you learn in-demand skills that you can immediately
+        earn with while paying as flexibly as you can afford.
+      </p>
+    </article>
+  </div>
 </section>
-{% endblock %}
-{% block footer %}
+{% endblock %} {% block footer %}
 <footer>
-    <div id="footer-navs">
-        <span>&copy; Project Star Technologies</span>
-    </div>   
+  <div id="footer-navs">
+    <span>&copy; Project Star Technologies</span>
+  </div>
 </footer>
 {% endblock %}

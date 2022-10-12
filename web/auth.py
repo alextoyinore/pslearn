@@ -20,24 +20,27 @@ def signup():
         password = request.form.get('password')
 
         user = User.query.filter_by(email=email).first()
-        
+
         if user:
             flash('An account with this email already exists.', category='error')
         elif len(firstname) < 2:
-            flash('First name cannot be less than two (2) characters', category='error')
+            flash('First name cannot be less than two (2) characters',
+                  category='error')
         elif len(lastname) < 2:
-            flash('Last name cannot be less than two (2) characters', category='error')
+            flash('Last name cannot be less than two (2) characters',
+                  category='error')
         elif len(email) < 2:
             flash('Email is too short', category='error')
         elif len(password) < 8:
             flash('Password cannot be less than 8 characters', category='error')
         else:
-            new_user = User(email=email, first_name=firstname, last_name=lastname, password=generate_password_hash(password, method='sha256'))
+            new_user = User(email=email, first_name=firstname, last_name=lastname,
+                            password=generate_password_hash(password, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            #login_user(user, remember=True)
             flash('Your account has been successfully created.', category='success')
-            return redirect(url_for('view.index'))
+            return redirect(url_for('auth.login'))
     return render_template('signup.html', user=current_user)
 
 
@@ -60,7 +63,8 @@ def login():
             else:
                 flash('Password is incorrect', category='error')
         else:
-            flash('There is no account matching this email on this platform.', category='error')
+            flash(
+                'There is no account matching this email on this platform.', category='error')
 
     return render_template('login.html', user=current_user)
 

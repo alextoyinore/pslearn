@@ -19,3 +19,4 @@ logo.addEventListener('click', function(){
      horizontal_nav_links.style.display = 'none'
      search.style.width = '50%'
  })
+

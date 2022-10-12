@@ -6,9 +6,9 @@
     margin: 0;
 }
 
-body{
-    background-color: #f4f9ff;
-}
+/* body{
+    background-color: #f4f9ff; 
+} */
 
 li, a, button, span, input{
     font-family: "PT Sans";
@@ -55,8 +55,8 @@ h3, strong, p {
     align-items: center;
     padding: 1.2em 10%;
     background-color: #fff;
-    height: 12vh;
-    border-bottom: 1px solid #0847B7;
+    height: 10vh;
+    /*border-bottom: 1px solid #0847B7;*/
     position: fixed;
     width: 100%;
     top: 0;
@@ -66,6 +66,7 @@ h3, strong, p {
 .logo{
     height: 2em;
     cursor: pointer;
+    filter: grayscale();
 }
 
 .horizontal-nav-links ul{
@@ -113,12 +114,12 @@ a.inline-link:hover{
 
 a.cta-link{
     transition: all 0.3s ease-in 0s;
-    color: #0847B7;
+    color: #232323;
     font-weight: 700;
 }
 
 a.cta-link:hover{
-    color: #08b768;
+    color: #0847B7;
 }
 
 .horizontal-nav-links li a.cta-link{
@@ -133,6 +134,15 @@ a.cta-link:hover{
 }
 
 /* END cta-links */
+
+/* BEGIN cta-btn-blue */
+
+.cta-btn-blue{
+    background-color: #0847B7;
+    color: #fff;
+}
+
+/* END cta-btn-blue */
 
 /* BEGIN cta button */
 
@@ -325,7 +335,8 @@ footer #footer-navs ul li:first-child{
 /* BEGIN content */
 .content{
     width: 100%;
-    margin: 20vh 0;
+    margin: 10vh 0;
+    padding: 5vh 0;
 }
 
 .boxed{
@@ -345,10 +356,11 @@ footer #footer-navs ul li:first-child{
 }
 
 .article-space{
-    width: 50%;
+    width: 33%;
     background-color: #fff;
     border-radius: 2em;
     padding: 2em;
+    border: 1px solid #23232333;
 }
 
 .content .login-form, .signup-form{
@@ -363,7 +375,7 @@ footer #footer-navs ul li:first-child{
 .title-display{
     font-size: 5em;
     font-weight: 700;
-    line-height: .8em;
+    line-height: .9em;
 }
 
 .title-sub{
@@ -397,8 +409,8 @@ footer #footer-navs ul li:first-child{
 
 .success{
     background-color: #08b76811;
-    color: #08b768;
-    border-bottom: 1px solid #08b768;
+    color: #039855FF;
+    /*border-bottom: 1px solid #08b768;*/
     /* box-shadow: 0px 5px 10px #08b7683c; */
 }
 

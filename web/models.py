@@ -41,4 +41,5 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.BLOB, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
-    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=True)
+    course_id = db.Column(
+        db.Integer, db.ForeignKey('course.id'), nullable=True)
