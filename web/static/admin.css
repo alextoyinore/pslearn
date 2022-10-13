@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+
+html {
+    height: 100%;
+    font-family: "PT Sans";
+    scrollbar-width: 0;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content nav{
+    padding: .1em 0;
+    width: 100%;
+    background-color: #0847B7;
+}
+
+.logo{
+    height: 2em;
+    cursor: pointer;
+}
+
+.content nav p{
+    color: #fff;
+    text-align: center;
+}
+
+.content nav p span{
+    font-size: 1em;
+}
+
+p{
+    width: 100%;
+}
+
+.admin-login-form{
+    width: 25%;
+    margin: 10vh auto;
+    padding: 1em;
+    color: #0847B7;
+}
+
+.admin-login-form p{
+    text-align: center;
+}
+
+.field{
+    width: 97.5%;
+    background-color: transparent;
+    color: #0847B7;
+    padding: .75em .2em;
+    text-indent: 1em;
+    outline: 0;
+    font-size: 1.2em;
+    border: 1px #0847B7 solid;
+}
+
+.form-title{
+    text-align: center;
+}
+
+@media screen and (max-width: 540px) {
+    .admin-login-form{
+        width: 85%;
+    }
+}
+
+
+@media screen and (min-width: 760px) {
+    .admin-login-form {
+        width: 65%;
+    }
+
+    .field{
+        padding: 1.3em .3em;
+        width: 98%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .admin-login-form {
+        width: 25%;
+    }
+
+    .field {
+        padding: .5em .3em;
+        width: 96.5%;
+    }
+}
+
+
+.cta-btn{
+    cursor: pointer;
+    width: 100%;
+    background-color: #0847B7;
+    color: #fff;
+    text-indent: 0;
+}
+
+.cta-btn:active{
+    background-color: #08b768;
+    color: #fff;
+    border: 1px #08b768 solid;
+}
+
+.admin-login-form a{
+    text-decoration: none;
+    color: #0847B7;
+}
+
+.admin-login-form a:hover{
+    text-decoration: underline;
+}
+

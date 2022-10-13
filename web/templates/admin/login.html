@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='admin.css') }}"
+    />
+  </head>
+  <body>
+    <section class="content">
+      <nav>
+        <p>
+          <img
+            class="logo"
+            src="{{ url_for('static', filename='logo-white.png') }}"
+            alt="projectstar logo"
+          />
+        </p>
+      </nav>
+
+      <form class="admin-login-form" method="post">
+        <p>
+          <h2 class="form-title">Log in to Instructor Area </h2>
+        </p>
+        <p>
+          <input type="email" placeholder="Email" class="field" />
+        </p>
+        <p>
+          <input type="password" placeholder="Password" class="field" />
+        </p>
+        <p>
+          <input type="submit" value="Continue" class="field cta-btn" />
+        </p>
+        <p>
+          <a href="">Forgot Password</a>
+        </p>
+      </form>
+    </section>
+
+    <script>
+      const logo = document.querySelector('.logo')
+      logo.addEventListener('click', function(){
+         window.location.assign("{{ url_for('view.index') }}");
+      })
+    </script>
+  </body>
+</html>
